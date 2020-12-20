@@ -1,7 +1,8 @@
 <template>
   <section class="container">
     <h1>{{item.family_name}} {{item.first_name}} {{item.middle_name}}</h1>
-    <dl>
+    <div>
+      <dl>
       <dt>id</dt>
       <dd>{{item.id}}</dd>
       <dt>Email</dt>
@@ -17,6 +18,7 @@
       <dt>Дата изменения</dt>
       <dd>{{item.updated_at}}</dd>
     </dl>
+    </div>
   </section>
 </template>
 
@@ -32,7 +34,7 @@ export default {
 
   data() {
     return {
-      item: []
+      items: []
     }
   }
 }
