@@ -11,16 +11,16 @@
 Данные пользователей использовать по структуре:
 {
 id,
-login, //имя входа
-family_name, // Фамилия
-first_name, // Имя
-middle_name, // Отчество
-email, // email
-phone, // телефон
-password, // пароль. должен быть скрыт
-secret_word, // секретное слово
-created_at, // Дата создания
-updated_at, // дата изменения
+login (имя входа),
+family_name (Фамилия),
+first_name (Имя),
+middle_name (Отчество),
+email (email),
+phone (телефон),
+password (пароль. должен быть скрыт),
+secret_word (секретное слово),
+created_at (Дата создания),
+updated_at (дата изменения),
 }
 
 * Дополнительный баллы начисляются:
@@ -57,17 +57,17 @@ cd my-project
 
 git remote set-url origin new-remote-url
 
-# install dependencies
+(install dependencies)
 npm install
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+(serve with hot reload at localhost:3000)
+npm run dev
 
-# build for production and launch server
-$ npm run build
-$ npm run start
+(build for production and launch server)
+npm run build
+npm run start
 
-# generate static project
-$ npm run generate
+(generate static project)
+npm run generate
 
 ---
