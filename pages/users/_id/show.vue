@@ -1,7 +1,9 @@
 <template>
   <section class="container">
-    <b-button class="mb-3" @click.prevent="goBack()">Вернуться к списку пользователей</b-button>
-    <h1>{{item.family_name}} {{item.first_name}} {{item.middle_name}}</h1>
+    <b-button class="mb-3" @click.prevent="goBack()">Вернуться назад</b-button>
+
+    <h1 class="page-title">{{item.family_name}} {{item.first_name}} {{item.middle_name}}</h1>
+
     <dl>
       <dt>id</dt>
       <dd>{{item.id}}</dd>
