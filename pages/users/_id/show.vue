@@ -1,24 +1,24 @@
 <template>
   <section class="container">
-    <h1>{{user.family_name}} {{user.first_name}} {{user.middle_name}}</h1>
-    <dl>
+    <h1>{{item.family_name}} {{item.first_name}} {{item.middle_name}}</h1>
+    <div>
+      <dl>
       <dt>id</dt>
-      <dd>{{user.id}}</dd>
+      <dd>{{item.id}}</dd>
       <dt>Email</dt>
-      <dd>{{user.email}}</dd>
+      <dd>{{item.email}}</dd>
       <dt>Телефон</dt>
-      <dd>{{user.phone}}</dd>
+      <dd>{{item.phone}}</dd>
       <dt>Имя входа</dt>
-      <dd>{{user.login}}</dd>
-      <dt>Пароль</dt>
-      <dd>{{user.password}}</dd>
+      <dd>{{item.login}}</dd>
       <dt>Секретное слово</dt>
-      <dd>{{user.secret_word}}</dd>
+      <dd>{{item.secret_word}}</dd>
       <dt>Дата создания</dt>
-      <dd>{{user.created_at}}</dd>
+      <dd>{{item.created_at}}</dd>
       <dt>Дата изменения</dt>
-      <dd>{{user.updated_at}}</dd>
+      <dd>{{item.updated_at}}</dd>
     </dl>
+    </div>
   </section>
 </template>
 
@@ -28,8 +28,14 @@ export default {
     return /^\d+$/.test(params.id)
   },
   async asyncData({$axios, params}) {
-    const user = await $axios.$get('https://my-json-server.typicode.com/tatyanabak/Data-for-user/users/' + params.id)
-    return {user}
+    const item = await $axios.$get('https://my-json-server.typicode.com/tatyanabak/Data-for-user/users/' + params.id)
+    return {item}
   },
+
+  data() {
+    return {
+      items: []
+    }
+  }
 }
 </script>
