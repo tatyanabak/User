@@ -1,5 +1,7 @@
 <template>
   <section class="container">
+    <b-button class="mb-3" @click.prevent="goBack()">Вернуться к списку пользователей</b-button>
+
     <h1>Редактировать</h1>
 
     <b-form v-if="show">
@@ -168,5 +170,11 @@ export default {
       show: true
     }
   },
+
+  methods: {
+    goBack() {
+      this.$router.go(-1)
+    }
+  }
 }
 </script>
