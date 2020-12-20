@@ -16,15 +16,14 @@ export default {
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
-    '@/assets/main.scss'
+    '@/assets/scss/main.scss'
   ],
 
   styleResources: {
     scss: [
-      '@/assets/variables.scss',
-      '@/assets/mixin.scss'
+      '@/assets/scss/variables.scss',
+      '@/assets/scss/mixin.scss'
     ]
-
   },
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)

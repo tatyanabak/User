@@ -1,8 +1,8 @@
 <template>
   <section class="container">
-    <b-button class="mb-3" @click.prevent="goBack()">Вернуться к списку пользователей</b-button>
+    <b-button class="mb-3" @click.prevent="goBack()">Вернуться назад</b-button>
 
-    <h1>Редактировать</h1>
+    <h1 class="page-title">Редактировать данные пользователя</h1>
 
     <b-form v-if="show">
       <b-form-group id="id"
