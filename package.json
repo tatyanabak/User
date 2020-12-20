@@ -13,7 +13,8 @@
     "@nuxtjs/dotenv": "^1.4.1",
     "bootstrap-vue": "^2.21.1",
     "core-js": "^3.6.5",
-    "nuxt": "^2.14.6"
+    "nuxt": "^2.14.6",
+    "vue2-datepicker": "^3.8.2"
   },
   "devDependencies": {}
 }
