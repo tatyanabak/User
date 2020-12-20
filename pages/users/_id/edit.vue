@@ -3,8 +3,8 @@
     <h1>Редактировать</h1>
     <form>
       <div class="form-group">
-        <label for="familyName">id</label>
-        <input type="text" class="form-control" id="userId" placeholder="id" v-bind:value="user.id" disabled>
+        <label for="userId">id</label>
+        <input type="number" class="form-control" id="userId" placeholder="id" v-bind:value="user.id" disabled>
       </div>
       <div class="form-group">
         <label for="familyName">Фамилия</label>
@@ -20,18 +20,18 @@
       </div>
       <div class="form-group">
         <label for="email">Email</label>
-        <input type="phone" class="form-control" id="phone" placeholder="Email" v-bind:value="user.phone">
+        <input type="email" class="form-control" id="email" placeholder="Email" v-bind:value="user.email">
       </div>
       <div class="form-group">
-        <label for="email">Телефон</label>
-        <input type="email" class="form-control" id="email" placeholder="Телефон" v-bind:value="user.email">
+        <label for="phone">Телефон</label>
+        <input type="tel" class="form-control" id="phone" placeholder="Телефон" v-bind:value="user.phone">
       </div>
       <div class="form-group">
         <label for="login">Имя входа</label>
         <input type="text" class="form-control" id="login" placeholder="Имя входа" v-bind:value="user.login">
       </div>
       <div class="form-group">
-        <label for="login">Пароль</label>
+        <label for="password">Пароль</label>
         <input type="password" class="form-control" id="password" placeholder="Пароль" v-bind:value="user.password">
       </div>
       <div class="form-group">
@@ -39,25 +39,32 @@
         <input type="text" class="form-control" id="secretWord" placeholder="Секретное слово" v-bind:value="user.secret_word">
       </div>
       <div class="form-group">
-        <label for="createdDate">Дата создания</label>
-        <input type="text" class="form-control" id="createdDate" placeholder="Дата создания" v-bind:value="user.created_at">
+        <label>Дата создания</label>
+        <date-picker format="DD.MM.YYYY" v-bind:value="user.created_at" v-bind:placeholder="user.created_at"></date-picker>
       </div>
       <div class="form-group">
-        <label for="updatedDate">Дата изменения</label>
-        <input type="text" class="form-control" id="updatedDate" placeholder="Дата изменения" v-bind:value="user.updated_at">
+        <label>Дата изменения</label>
+        <date-picker format="DD.MM.YYYY" v-bind:value="user.updated_at" v-bind:placeholder="user.updated_at"></date-picker>
       </div>
+      <button type="submit" name="submit">Сохранить</button>
     </form>
   </section>
 </template>
 
 <script>
+import DatePicker from 'vue2-datepicker';
+import 'vue2-datepicker/index.css';
+
 export default {
   validate({params}) {
     return /^\d+$/.test(params.id)
   },
+
   async asyncData({$axios, params}) {
     const user = await $axios.$get('https://my-json-server.typicode.com/tatyanabak/Data-for-user/users/' + params.id)
     return {user}
   },
+
+  components: { DatePicker },
 }
 </script>
