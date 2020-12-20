@@ -43,13 +43,9 @@
       </template>
 
       <template #cell(admin)="data">
-        <btn @click.prevent="showUser(data.item)">
-          <img src="~/assets/image/show.png" alt="Просмотреть">
-        </btn>
+        <btn class="btn btn--show" @click.prevent="showUser(data.item)"></btn>
 
-        <btn @click.prevent="editUser(data.item)">
-          <img src="~/assets/image/edit.png" alt="Редактировать">
-        </btn>
+        <btn class="btn btn--edit" @click.prevent="editUser(data.item)"></btn>
       </template>
 
     </b-table>

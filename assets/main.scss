@@ -1,0 +1,28 @@
+body {
+  color: $basic-color;
+}
+
+.btn{
+  @include btn-image-background;
+
+  &--show {
+    background-image: url("~assets/image/show.png");
+    width: 35px;
+    height: 35px;
+  }
+
+  &--edit {
+    background-image: url("~assets/image/edit.png");
+    width: 35px;
+    height: 35px;
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
