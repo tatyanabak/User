@@ -1,45 +1,45 @@
 <template>
-  <div>
+  <section>
     <b-table striped hover small :fields="fields" :items="items">
 
       <template #cell(id)="data">
-        {{ data.item.id }}
+        {{data.item.id}}
       </template>
 
       <template #cell(login)="data">
-        {{ data.item.login }}
+        {{data.item.login}}
       </template>
 
       <template #cell(family_name)="data">
-        {{ data.item.family_name }}
+        {{data.item.family_name}}
       </template>
 
       <template #cell(first_name)="data">
-        {{ data.item.first_name }}
+        {{data.item.first_name}}
       </template>
 
       <template #cell(middle_name)="data">
-        {{ data.item.middle_name }}
+        {{data.item.middle_name}}
       </template>
 
       <template #cell(email)="data">
-        {{ data.item.email }}
+        {{data.item.email}}
       </template>
 
       <template #cell(phone)="data">
-        {{ data.item.phone }}
+        {{data.item.phone}}
       </template>
 
       <template #cell(secret_word)="data">
-        {{ data.item.secret_word }}
+        {{data.item.secret_word}}
       </template>
 
       <template #cell(created_at)="data">
-        {{ data.item.created_at }}
+        {{data.item.created_at}}
       </template>
 
       <template #cell(updated_at)="data">
-        {{ data.item.updated_at }}
+        {{data.item.updated_at}}
       </template>
 
       <template #cell(admin)="data">
@@ -53,7 +53,7 @@
       </template>
 
     </b-table>
-  </div>
+  </section>
 </template>
 
 <script>
