@@ -16,5 +16,10 @@
     "nuxt": "^2.14.6",
     "vue2-datepicker": "^3.8.2"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@nuxtjs/style-resources": "^1.0.0",
+    "fibers": "^5.0.0",
+    "sass": "^1.30.0",
+    "sass-loader": "^10.1.0"
+  }
 }
