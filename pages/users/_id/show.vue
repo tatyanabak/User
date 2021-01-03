@@ -1,35 +1,21 @@
 <template>
   <section class="container">
-    <b-button class="mb-3" @click.prevent="goBack()">Вернуться назад</b-button>
-
-    <h1 class="page-title">{{item.family_name}} {{item.first_name}} {{item.middle_name}}</h1>
-
-    <dl>
-      <dt>id</dt>
-      <dd>{{item.id}}</dd>
-      <dt>Email</dt>
-      <dd>{{item.email}}</dd>
-      <dt>Телефон</dt>
-      <dd>{{item.phone}}</dd>
-      <dt>Имя входа</dt>
-      <dd>{{item.login}}</dd>
-      <dt>Секретное слово</dt>
-      <dd>{{item.secret_word}}</dd>
-      <dt>Дата создания</dt>
-      <dd>{{item.created_at}}</dd>
-      <dt>Дата изменения</dt>
-      <dd>{{item.updated_at}}</dd>
-    </dl>
+    <Breadcrumbs />
+    <PageTitle v-bind:title="title" />
+    <UserShow v-bind:item="item"/>
   </section>
 </template>
 
 <script>
-
+import PageTitle from '@/components/PageTitle.vue'
+import Breadcrumbs from '@/components/Breadcrumbs.vue'
+import UserShow from '@/components/UserShow.vue'
 
 export default {
   validate({params}) {
     return /^\d+$/.test(params.id)
   },
+
   async asyncData({$axios, params}) {
     const item = await $axios.$get('https://my-json-server.typicode.com/tatyanabak/Data-for-user/users/' + params.id)
     return {item}
@@ -37,14 +23,14 @@ export default {
 
   data() {
     return {
-      items: []
+      title: "Просмотр данных пользователя"
     }
   },
 
-  methods: {
-    goBack() {
-      this.$router.go(-1)
-    }
+  components: {
+    Breadcrumbs,
+    PageTitle,
+    UserShow
   }
 
 }
